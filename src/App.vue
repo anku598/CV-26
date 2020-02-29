@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <ProfileHeader/>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Component, Prop,Vue } from 'vue-property-decorator';
 
-#nav {
-  padding: 30px;
+import ProfileHeader from '@/components/ProfileHeader.vue';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@Component({
+  name:'App',
+  components: {
+    ProfileHeader,
+
   }
+})
+
+export default class App extends Vue {
+  
 }
+</script>
+
+<style lang="scss">
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap-grid.min.css');
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+@import '@/assets/css/style.scss';
+#app {
+ padding-bottom: 3rem;
+
+}
+
+
 </style>
